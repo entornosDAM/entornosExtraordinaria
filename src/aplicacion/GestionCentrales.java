@@ -10,9 +10,9 @@ public class GestionCentrales {
 		centrales = new ArrayList<>();
 	}
 	
-	public void addCentral(Central central) throws Exception{
-		if( ! existeCentral(central.getNombre())) {
-			centrales.add(central);
+	public void addCentral(String nombre, double produccion) throws Exception{
+		if( ! existeCentral(nombre)) {
+			centrales.add(new Central(nombre, produccion));
 		}else {
 			throw new Exception("Ya existe la central");
 		}
