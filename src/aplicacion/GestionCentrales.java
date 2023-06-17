@@ -11,7 +11,10 @@ public class GestionCentrales {
 	}
 	
 	public void addCentral(String nombre, double produccion) throws Exception{
-		if( ! existeCentral(nombre)) {
+		
+		if(produccion < 0) {
+			throw new Exception("La proucción no puede ser negativa");
+		} else if( ! existeCentral(nombre)) {
 			centrales.add(new Central(nombre, produccion));
 		}else {
 			throw new Exception("Ya existe la central");
